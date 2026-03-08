@@ -1,0 +1,349 @@
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bếp Nhà Milan | Bún Chả & Bánh Cuốn Nóng</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Jost:wght@700;800&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-canvas: #2C0505;
+            --color-paper: #F2EFE4;
+            --color-ink-red: #8B1E1E;
+            --color-ink-black: #1A1A1A;
+            --font-sans: 'DM Sans', sans-serif;
+            --font-display: 'Jost', sans-serif;
+            --font-script: 'Dancing Script', cursive;
+        }
+
+        body {
+            background-color: var(--color-canvas);
+            color: var(--color-paper);
+            font-family: var(--font-sans);
+            overflow-x: hidden;
+        }
+
+        .paper-card {
+            background-color: var(--color-paper);
+            position: relative;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+            color: var(--color-ink-black);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+
+        .ink-text {
+            mix-blend-mode: multiply;
+            opacity: 0.9;
+        }
+
+        .display-text {
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        .script-text {
+            font-family: var(--font-script);
+            font-weight: 700;
+        }
+
+        .moody-image {
+            filter: contrast(1.05) saturate(1.05);
+            transition: filter 0.5s ease;
+        }
+        .moody-image:hover {
+            filter: contrast(1.1) saturate(1.1);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--color-canvas); 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #5c1818; 
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        .floating-badge {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .triptych-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        @media (min-width: 1024px) {
+            .triptych-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 3rem; 
+            }
+        }
+        
+        .milan-outline {
+            -webkit-text-stroke: 1.5px #5c1818;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen pb-20">
+
+    <!-- Navigation -->
+    <nav class="w-full py-8 px-8 flex justify-between items-center z-50 relative">
+        <div class="display-text text-sm font-bold tracking-[0.2em] text-[#F2EFE4] opacity-80">
+            Từ 2021
+        </div>
+        <div class="hidden md:flex space-x-12">
+            <a href="#menu" class="display-text text-xs font-bold text-[#F2EFE4] hover:text-[#AA3333] transition-colors duration-300">Thực Đơn</a>
+            <a href="#visit-us" class="display-text text-xs font-bold text-[#F2EFE4] hover:text-[#AA3333] transition-colors duration-300">Liên Hệ</a>
+        </div>
+        <a href="tel:0977341386" class="bg-[#F2EFE4] text-[#2C0505] display-text text-xs font-bold py-3 px-6 tracking-widest hover:bg-[#AA3333] hover:text-[#F2EFE4] transition-all duration-300 inline-block">
+            Alo Ship
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="max-w-[1600px] mx-auto px-6 md:px-12 pt-8 pb-24">
+        <div class="triptych-grid h-auto lg:h-[700px]">
+            
+            <!-- Left Card -->
+            <div class="paper-card p-12 flex flex-col items-center justify-center text-center group">
+                
+                <div class="relative w-48 h-48 mb-8 border-2 border-[#8B1E1E] rounded-full flex items-center justify-center transform group-hover:scale-105 transition-transform duration-500">
+                    <svg viewBox="0 0 100 100" class="absolute w-full h-full animate-[spin_20s_linear_infinite] opacity-80">
+                        <defs>
+                            <path id="circle" d="M 50, 50 m -38, 0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0"></path>
+                        </defs>
+                        <text font-size="10.5" font-weight="bold" fill="#8B1E1E" letter-spacing="3.5">
+                            <textPath xlink:href="#circle">
+                                BÚN CHẢ • BÁNH CUỐN NÓNG
+                            </textPath>
+                        </text>
+                    </svg>
+                    
+                    <span class="script-text text-6xl text-[#8B1E1E] ink-text transform -rotate-6 tracking-wider milan-outline">MILAN</span>
+                </div>
+                
+                <h1 class="script-text text-6xl md:text-7xl text-[#8B1E1E] ink-text mb-6 transform -rotate-3 z-10 relative">
+                    Bếp Nhà Milan
+                </h1>
+                <p class="display-text text-xs font-bold text-gray-500 tracking-[0.2em] uppercase mt-12">
+                    Thái Nguyên, Việt Nam
+                </p>
+            </div>
+
+            <!-- Center Image -->
+            <div class="relative overflow-hidden h-[500px] lg:h-full group">
+                <img src="images/interior.webp" class="w-full h-full object-cover moody-image" alt="Không gian phục vụ Bếp Nhà Milan">
+                <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-transparent to-[#2C0505] opacity-40 pointer-events-none"></div>
+            </div>
+
+            <!-- Right Card -->
+            <div class="paper-card p-12 flex flex-col justify-center relative">
+                
+                <div class="absolute top-8 right-8 w-12 h-1 bg-[#8B1E1E] opacity-20"></div>
+
+                <div class="script-text text-4xl md:text-5xl text-[#8B1E1E] ink-text mb-12 space-y-6">
+                    <p>Ngon từ bánh,</p>
+                    <p>ngọt từ nhân!</p>
+                    <p>Ăn một lần là nhớ mãi!</p>
+                </div>
+
+                <div class="space-y-6">
+                    <p class="text-sm leading-7 text-gray-600 font-medium max-w-sm ink-text">
+                        Bánh Cuốn - Dinh dưỡng đủ đầy.
+                    </p>
+                    <p class="text-sm leading-7 text-gray-600 font-medium max-w-sm ink-text">
+                        Bánh cuốn nóng - Dai, mềm và thơm ngon! Chúng tôi luôn tận tâm mang đến những bữa ăn trọn vẹn hương vị truyền thống nhất.
+                    </p>
+                </div>
+
+                <div class="mt-16 flex items-center space-x-4">
+                    <span class="h-[1px] w-12 bg-[#8B1E1E]"></span>
+                    <span class="display-text text-[10px] font-bold text-[#8B1E1E]">Từ 2021</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="max-w-[1200px] mx-auto px-6 mb-24">
+        
+        <div class="flex flex-col md:flex-row md:items-end md:space-x-6 mb-12">
+            <h2 class="display-text text-4xl font-bold text-[#F2EFE4] tracking-widest mb-4 md:mb-0">Thực Đơn</h2>
+            <span class="script-text text-3xl text-[#AA3333] mb-2 md:transform md:-rotate-3">Đồng giá 35K - Suất lớn 40K</span>
+        </div>
+
+        <!-- Menu Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Bún Chả Card -->
+            <div class="paper-card p-10 md:p-14">
+                <div class="border-b-2 border-[#8B1E1E] pb-4 mb-10 flex justify-between items-end">
+                    <h3 class="display-text text-xl font-bold text-[#8B1E1E]">Bún Chả</h3>
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Hương vị Hà Nội</span>
+                </div>
+
+                <div class="space-y-10">
+                    <!-- Item -->
+                    <div class="group">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <h4 class="display-text text-base font-bold text-[#1A1A1A] group-hover:text-[#8B1E1E] transition-colors">Bún chả lẫn</h4>
+                            <span class="display-text text-sm font-bold text-[#8B1E1E]">35k / 40k</span>
+                        </div>
+                        <p class="text-sm text-gray-600 leading-relaxed italic">Sự kết hợp hoàn hảo giữa chả viên và chả miếng nướng than hoa.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="group">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <h4 class="display-text text-base font-bold text-[#1A1A1A] group-hover:text-[#8B1E1E] transition-colors">Bún chả nạc viên</h4>
+                            <span class="display-text text-sm font-bold text-[#8B1E1E]">35k / 40k</span>
+                        </div>
+                        <p class="text-sm text-gray-600 leading-relaxed italic">Chả viên nạc mềm ngọt, tẩm ướp đậm đà gia vị truyền thống.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="group">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <h4 class="display-text text-base font-bold text-[#1A1A1A] group-hover:text-[#8B1E1E] transition-colors">Bún chả miếng</h4>
+                            <span class="display-text text-sm font-bold text-[#8B1E1E]">35k / 40k</span>
+                        </div>
+                        <p class="text-sm text-gray-600 leading-relaxed italic">Thịt ba chỉ thái mỏng nướng xém cạnh, thơm lừng béo ngậy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bánh Cuốn Card -->
+            <div class="paper-card p-10 md:p-14 relative overflow-hidden">
+                
+                <div class="absolute top-[-20px] right-[-20px] w-24 h-24 bg-[#8B1E1E] rounded-full flex items-center justify-center transform rotate-12 z-10">
+                    <span class="display-text text-[10px] text-white font-bold text-center leading-tight">Nóng<br>Hổi</span>
+                </div>
+
+                <div class="border-b-2 border-[#8B1E1E] pb-4 mb-10 flex justify-between items-end">
+                    <h3 class="display-text text-xl font-bold text-[#8B1E1E]">Bánh Cuốn</h3>
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Tráng tay tại chỗ</span>
+                </div>
+
+                <div class="space-y-8">
+                    <!-- Item -->
+                    <div class="group">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <h4 class="display-text text-base font-bold text-[#1A1A1A] group-hover:text-[#8B1E1E] transition-colors">Bánh cuốn nóng</h4>
+                            <span class="display-text text-sm font-bold text-[#8B1E1E]">35k / 40k</span>
+                        </div>
+                        <p class="text-sm text-gray-600 leading-relaxed italic">Bánh cuốn tráng tay vỏ mỏng, nhân mộc nhĩ thịt băm truyền thống.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="group">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <h4 class="display-text text-base font-bold text-[#1A1A1A] group-hover:text-[#8B1E1E] transition-colors">Bánh cuốn trứng</h4>
+                            <span class="display-text text-sm font-bold text-[#8B1E1E]">35k / 40k</span>
+                        </div>
+                        <p class="text-sm text-gray-600 leading-relaxed italic">Tráng cùng trứng gà ta béo ngậy, giữ trọn vị thơm lừng.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="group">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <h4 class="display-text text-base font-bold text-[#1A1A1A] group-hover:text-[#8B1E1E] transition-colors">Bánh cuốn thịt nướng</h4>
+                            <span class="display-text text-sm font-bold text-[#8B1E1E]">35k / 40k</span>
+                        </div>
+                        <p class="text-sm text-gray-600 leading-relaxed italic">Ăn kèm cùng chả nướng than hoa nóng hổi, hòa quyện tuyệt hảo.</p>
+                    </div>
+
+                    <div class="my-6 border-t border-dashed border-[#8B1E1E] opacity-30"></div>
+
+                    <!-- Item -->
+                    <div class="group">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <h4 class="display-text text-base font-bold text-[#1A1A1A] group-hover:text-[#8B1E1E] transition-colors">Bánh cuốn chấm</h4>
+                            <span class="display-text text-sm font-bold text-[#8B1E1E]">35k / 40k</span>
+                        </div>
+                        <p class="text-sm text-gray-600 leading-relaxed italic">Phục vụ cùng nước mắm chua ngọt pha tỏi ớt đậm đà.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="group">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <h4 class="display-text text-base font-bold text-[#1A1A1A] group-hover:text-[#8B1E1E] transition-colors">Bánh cuốn chan nước xương</h4>
+                            <span class="display-text text-sm font-bold text-[#8B1E1E]">35k / 40k</span>
+                        </div>
+                        <p class="text-sm text-gray-600 leading-relaxed italic">Hòa quyện cùng nước xương hầm thanh ngọt, nóng hổi ấm bụng.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visit Us / Contact Section -->
+    <section id="visit-us" class="max-w-[1600px] mx-auto px-6 pb-12">
+        <div class="bg-[#1a0303] border border-[#3d0a0a] p-8 md:p-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            
+            <!-- Map/Image Area -->
+            <div class="relative h-64 md:h-full min-h-[300px] w-full grayscale hover:grayscale-0 transition-all duration-700 overflow-hidden">
+                <img src="images/coffee.jpg" class="w-full h-full object-cover opacity-80" alt="Đồ uống và món ăn kèm Bếp Nhà Milan">
+                <div class="absolute inset-0 border border-[#8B1E1E] opacity-30 m-4 pointer-events-none"></div>
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <a href="https://share.google/dzuXHztsiSb6CV2CN" target="_blank" class="bg-[#F2EFE4] text-[#2C0505] display-text text-xs font-bold py-3 px-8 tracking-widest hover:bg-[#8B1E1E] hover:text-white transition-all duration-300 shadow-lg pointer-events-auto">
+                        XEM BẢN ĐỒ
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Details Area -->
+            <div class="text-[#F2EFE4]">
+                <h2 class="script-text text-5xl text-[#AA3333] mb-8">Ghé Thăm</h2>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
+                    <div>
+                        <h4 class="display-text text-xs font-bold text-[#8B1E1E] mb-4 tracking-widest">ĐỊA CHỈ</h4>
+                        <p class="text-sm leading-6 opacity-80 font-light">
+                            SN60 Phố Hoàng Hoa Thám,<br>
+                            Phường Phan Đình Phùng,<br>
+                            TP. Thái Nguyên
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="display-text text-xs font-bold text-[#8B1E1E] mb-4 tracking-widest">GIỜ MỞ CỬA</h4>
+                        <p class="text-sm leading-6 opacity-80 font-light">
+                            5:00 Sáng - Trưa Mỗi Ngày
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-t border-[#3d0a0a] pt-8">
+                    <div class="mb-6 sm:mb-0">
+                        <h4 class="display-text text-xs font-bold text-[#8B1E1E] mb-4 tracking-widest">LIÊN HỆ & SHIP</h4>
+                        <a href="tel:0977341386" class="block text-sm opacity-80 hover:text-[#AA3333] cursor-pointer transition-colors mb-2">📞 0977 341 386</a>
+                        <a href="https://zalo.me/0977341386" target="_blank" class="block text-sm opacity-80 hover:text-[#AA3333] cursor-pointer transition-colors">💬 Zalo: 0977 341 386</a>
+                    </div>
+                    
+                    <div class="flex space-x-6 items-center">
+                        <a href="https://zalo.me/0977341386" target="_blank" class="flex items-center text-[#F2EFE4] hover:text-[#AA3333] transition-colors display-text text-[10px] font-bold tracking-widest">
+                            ZALO
+                        </a>
+                        <a href="https://www.facebook.com/milan.coffee.3/photos" target="_blank" class="flex items-center text-[#F2EFE4] hover:text-[#AA3333] transition-colors display-text text-[10px] font-bold tracking-widest">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                            </svg>
+                            FACEBOOK
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
